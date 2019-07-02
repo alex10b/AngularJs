@@ -1,0 +1,13 @@
+<div><a  ui-sref="home">Home < </a><a  ui-sref="categories">Categories</a></div>
+<br>
+<h3>These are our items in the category selected</h3>
+
+<ul >
+	<li  ng-repeat="items in ctrl.items">
+		{{items.short_name}} <br>
+		{{items.name}} <br>
+		{{items.description}} <br>
+		<br>
+	
+	</li>
+</ul>
