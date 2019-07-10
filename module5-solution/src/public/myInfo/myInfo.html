@@ -1,0 +1,18 @@
+<div class="container">
+<h1  ng-hide="info.user.completed"> <a  ui-sref="public.signUp">"Sign Up Now!"</a></h1>
+<div  ng-if="info.user.completed">
+      Firstname: {{ info.user.name}} <br>
+      Lastname: {{ info.user.lastName}} <br>
+      Email: {{ info.user.email}} <br>
+      Phone: {{ info.user.phone }} <br>
+      Favorite Dish: {{ info.user.favItem.name }}<br>
+      <div>
+        <img width="250" height="150"
+      ng-src="{{info.basePath}}/images/{{info.user.favItem.short_name}}.jpg"
+      alt="{{info.user.favItem.name}}">
+      <div id="m_description">
+        Item Description: {{ info.user.favItem.description }}
+      </div>
+      </div>
+</div>
+</div>

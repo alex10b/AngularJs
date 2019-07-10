@@ -1,0 +1,63 @@
+<style>
+#box{
+ color: #f6b319;
+}
+</style>
+<div class="container " id="box" >
+        <h3>Registration</h3>
+        <form color="#f6b319" name='regForm' novalidate>
+        
+          <input type="text" name="name" placeholder="type your first name"
+            ng-model="reg.user.name"
+            
+            required
+            >
+            
+            <span ng-if="regForm.name.$error.required && regForm.name.$touched">
+                    first name is required
+            </span>
+            <br>
+            <input type="text" name="lastName" placeholder="type your last name"
+            ng-model="reg.user.lastName"
+            required
+            >
+            <span ng-if="regForm.lastName.$error.required && regForm.lastName.$touched">
+              Last name is required
+            </span>
+            <br>
+          
+          <input type="email" name="email" placeholder="Email"
+            ng-model="reg.user.email"
+            required>
+            <span ng-if="regForm.email.$invalid && regForm.email.$touched">
+              Must be a valid email address: handle@domain format
+            </span>
+            
+            <br>
+            <input type="text" name="fav" placeholder="type your favorite dish"
+            ng-model="reg.user.fav"
+            required>
+            <span ng-if="regForm.fav.$error.required && regForm.fav.$touched ">
+                favorite dish is riquired
+            </span>
+            <br>
+          <input type="text" name="phone" placeholder="Phone ###-###-####"
+            ng-model="reg.user.phone"
+            >
+            <span ng-if="regForm.phone.$invalid && regForm.phone.$touched">
+              Phone must be in the format ###-###-####.
+            </span>
+            <br>
+            
+          <button
+            ng-disabled="regForm.$invalid"
+            ng-click="reg.submit()">Submit</button>
+        
+            <div style="margin-top: 10px;">
+              Form valid? {{ regForm.$valid }} , {{reg.prueba}}
+            </div>
+            <div ng-if="reg.user.completed">
+              <a ui-sref="public.info">the register has been completed you can se you info here</a>
+            </div>
+        </form>
+</div>
